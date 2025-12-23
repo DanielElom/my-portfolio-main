@@ -1,0 +1,490 @@
+@import "tailwindcss";
+
+/* Import react-big-calendar styles */
+@import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+
+/* Custom CSS Variables for Hotel PMS */
+:root {
+  --color-primary: 59 130 246;
+  --color-primary-foreground: 255 255 255;
+  --color-secondary: 100 116 139;
+  --color-secondary-foreground: 255 255 255;
+  --color-background: 255 255 255;
+  --color-foreground: 15 23 42;
+  --color-muted: 248 250 252;
+  --color-muted-foreground: 100 116 139;
+  --color-card: 255 255 255;
+  --color-card-foreground: 15 23 42;
+  --color-border: 226 232 240;
+  --color-input: 226 232 240;
+  --color-ring: 59 130 246;
+  --radius: 0.5rem;
+}
+
+/* Dark mode support (optional for night shifts) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: 15 23 42;
+    --color-foreground: 248 250 252;
+    --color-muted: 30 41 59;
+    --color-muted-foreground: 148 163 184;
+    --color-card: 30 41 59;
+    --color-card-foreground: 248 250 252;
+    --color-border: 51 65 85;
+    --color-input: 51 65 85;
+  }
+}
+
+/* Base styles */
+* {
+  border-color: rgb(var(--color-border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-background));
+  /* color: rgb(var(--color-foreground)); */
+  font-feature-settings: "rlig" 1, "calt" 1;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* PWA Install Banner */
+#pwa-install-banner {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(37 99 235) 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Calendar customizations */
+.rbc-calendar {
+  font-family: inherit;
+}
+
+.rbc-header {
+  padding: 12px 8px;
+  font-weight: 600;
+  background-color: rgb(var(--color-muted));
+  border-bottom: 1px solid rgb(var(--color-border));
+}
+
+.rbc-event {
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 8px;
+}
+
+.rbc-event.reservation-confirmed {
+  background-color: rgb(34 197 94);
+  color: white;
+}
+
+.rbc-event.reservation-checked-in {
+  background-color: rgb(59 130 246);
+  color: white;
+}
+
+.rbc-event.reservation-cancelled {
+  background-color: rgb(156 163 175);
+  color: white;
+}
+
+.rbc-event.reservation-no-show {
+  background-color: rgb(239 68 68);
+  color: white;
+}
+
+/* Form styles */
+.form-input {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.form-textarea {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.form-checkbox {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  accent-color: #2563eb;
+}
+
+.form-checkbox:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.form-radio {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid #d1d5db;
+  accent-color: #2563eb;
+}
+
+.form-radio:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading-spinner {
+  border: 2px solid rgb(var(--color-muted));
+  border-top: 2px solid rgb(var(--color-primary));
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Status indicators */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-dot.available {
+  background-color: rgb(34 197 94);
+}
+
+.status-dot.occupied {
+  background-color: rgb(239 68 68);
+}
+
+.status-dot.cleaning {
+  background-color: rgb(245 158 11);
+}
+
+.status-dot.maintenance {
+  background-color: rgb(156 163 175);
+}
+
+.status-dot.reserved {
+  background-color: rgb(59 130 246);
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+}
+
+/* Touch optimizations for tablets */
+@media (pointer: coarse) {
+  button, .btn-primary, .btn-secondary {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input, select, textarea {
+    min-height: 44px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid rgb(var(--color-ring));
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-secondary));
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 400px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out;
+}
+
+.notification.success {
+  background-color: rgb(34 197 94);
+  color: white;
+}
+
+.notification.error {
+  background-color: rgb(239 68 68);
+  color: white;
+}
+
+.notification.warning {
+  background-color: rgb(245 158 11);
+  color: white;
+}
+
+.notification.info {
+  background-color: rgb(59 130 246);
+  color: white;
+}
+
+/* Room grid layout */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .room-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Calendar month view optimizations */
+.calendar-responsive {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .calendar-responsive {
+    font-size: 12px;
+  }
+  
+  .rbc-toolbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .rbc-btn-group {
+    width: 100%;
+  }
+  
+  .rbc-btn-group button {
+    flex: 1;
+  }
+}
+
+
+
+/* Button component styles - add these to your existing CSS */
+
+/* Primary button */
+.btn-primary {
+  background-color: rgb(59 130 246); /* Blue-500 */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: rgb(37 99 235); /* Blue-600 */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: rgb(29 78 216); /* Blue-700 */
+  transform: translateY(0.5px);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.3);
+}
+
+.btn-primary:disabled {
+  background-color: rgb(156 163 175); /* Gray-400 */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: rgb(248 250 252); /* Slate-50 */
+  color: rgb(51 65 85); /* Slate-700 */
+  border: 1px solid rgb(226 232 240); /* Slate-200 */
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgb(241 245 249); /* Slate-100 */
+  border-color: rgb(203 213 225); /* Slate-300 */
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: rgb(226 232 240); /* Slate-200 */
+  transform: translateY(0.5px);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(100 116 139 / 0.3);
+}
+
+.btn-secondary:disabled {
+  background-color: rgb(248 250 252);
+  color: rgb(156 163 175);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Shadow utility for cards */
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+}
+
+/* Animation for PWA banner */
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
