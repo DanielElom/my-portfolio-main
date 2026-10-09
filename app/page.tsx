@@ -20,9 +20,9 @@ export default function Portfolio() {
       role: "Web App Developer",
       description: "Full-stack logistics dispatch PWA. Package delivery app for Abuja, Nigeria. Similar to Bolt but for deliveries. Single app with role-based routing.",
       technologies: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Socket.io", "Tailwind CSS", "Zustand"],
-      url: "https://sarva-tech.vercel.app/",
+      url: "https://sarva-logistics.vercel.app/",
       image: "/sarva-logistics-mobile-dark.png",
-      sector: "Technology",
+      sector: "Logistics",
     },
     {
       title: "Padama Energy",
