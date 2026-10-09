@@ -7,9 +7,9 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Daniel Elom - Frontend Engineer",
-  description: "Frontend Engineer specializing in React, Next.js, Vue.js, and Nuxt.js",
-  generator: "v0.app",
+  title: "Daniel Elom - Software Engineer",
+  description:
+    "Full-Stack Engineer solving problems with JavaScript/TypeScript, React/Next.js, Vue/Nuxt, Tailwind, NestJS, PostgreSQL, Prisma, Redis, and Socket.io",
 }
 
 export default function RootLayout({

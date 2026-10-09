@@ -7,13 +7,22 @@ import Image from "next/image"
 export default function Portfolio() {
   const projects = [
     {
-      title: "Fair-Ride Logistics",
+      title: "Lumen-Market",
+      role: "Full-Stack Developer",
+      description: "Lumen Market is a modern e-commerce marketplace (Nigeria-first, currency ₦). Temu-style breadth of catalog but a calmer, more trustworthy visual tone.",
+      technologies: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Socket.io", "Tailwind CSS", "Paystack"],
+      url: "https://lumen-market.vercel.app/",
+      image: "/lumen-market-desktop-dark.png",
+      sector: "E-commerce",
+    },
+    {
+      title: "Sarva-Logistics",
       role: "Web App Developer",
-      description: "Dispatch and logistics company platform connecting verified riders for safe, swift, and affordable deliveries.",
-      technologies: ["Vue.js", "Nuxt.js", "TypeScript", "Tailwind CSS"],
-      url: "https://fair-ride-two.vercel.app/",
-      image: "/fair-ride.png",
-      sector: "Logistics",
+      description: "Full-stack logistics dispatch PWA. Package delivery app for Abuja, Nigeria. Similar to Bolt but for deliveries. Single app with role-based routing.",
+      technologies: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Socket.io", "Tailwind CSS", "Zustand"],
+      url: "https://sarva-tech.vercel.app/",
+      image: "/sarva-logistics-mobile-dark.png",
+      sector: "Technology",
     },
     {
       title: "Padama Energy",
@@ -23,6 +32,15 @@ export default function Portfolio() {
       url: "#",
       image: "/padama.png",
       sector: "Energy",
+    },
+    {
+      title: "Sarva-Tech",
+      role: "Web Developer",
+      description: "The official website for Sarva Tech, a technology company that identifies problems, designs solutions, builds them, ships them, and keeps improving them.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      url: "https://sarva-tech.vercel.app/",
+      image: "/sarva-tech.png",
+      sector: "Technology",
     },
     {
       title: "Sea to Seas Ltd",
