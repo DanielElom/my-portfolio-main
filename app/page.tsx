@@ -81,6 +81,14 @@ export default function Portfolio() {
       category: "Integrations & DevOps",
       items: ["Git/GitHub", "Paystack", "JWT Authentication", "Resend", "Vercel", "Render", "Supabase", "Africa's Talking"],
     },
+    {
+      category: "AI Agents & Automation",
+      items: ["n8n", "LLM Agents", "AI Tool Use", "Structured Outputs", "Human-in-the-Loop", "Webhooks", "HMAC Signing", "Claude Code"],
+    },
+    {
+      category: "AI Evaluation & Data Quality",
+      items: ["Data Annotation", "Dataset Validation", "AI Quality Assurance", "Automated Testing", "Data Privacy (NDPA)"],
+    },
   ]
 
   return (
@@ -100,9 +108,13 @@ export default function Portfolio() {
               />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-primary mb-4 text-balance">Daniel Elom</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-accent mb-4">Full Stack Engineer</h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-accent mb-4 text-balance max-w-4xl mx-auto">
+              <span className="sm:whitespace-nowrap">Full-Stack Engineer ·</span>{" "}
+              <span className="sm:whitespace-nowrap">AI Automation &amp; Integration Specialist ·</span>{" "}
+              <span className="sm:whitespace-nowrap">AI Model Evaluation Specialist</span>
+            </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-3xl mx-auto">
-              Full-Stack Developer experienced in building scalable, responsive web applications and business solutions. Skilled in JavaScript/TypeScript, React, Next.js, Vue.js, NestJS, PostgreSQL and Redis. Experienced in API development, database architecture, real-time systems, payment integrations, application security and performance optimization. Focused on transforming business challenges into practical, reliable software solutions.
+              Full-Stack Engineer and AI Automation Specialist building scalable web applications, intelligent automation systems and AI-powered business solutions. Skilled in NestJS, Next.js, TypeScript, PostgreSQL, Prisma, Redis, Socket.io, React, Vue.js and Nuxt.js. Experienced in designing AI agents and chatbots with n8n, LLM integrations, APIs and webhooks, using structured outputs, human-in-the-loop escalation and privacy-by-design to automate customer support, payments, order management and service delivery. Also experienced in data annotation, dataset validation and AI quality assurance, with a focus on reliable, well-tested, production-ready systems.
             </p>
           </div>
 
@@ -152,7 +164,7 @@ export default function Portfolio() {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Technical Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map(({ category, items }) => (
               <Card
                 key={category}

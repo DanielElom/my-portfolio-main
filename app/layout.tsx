@@ -9,7 +9,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Daniel Elom - Software Engineer",
   description:
-    "Full-Stack Engineer solving problems with JavaScript/TypeScript, React/Next.js, Vue/Nuxt, Tailwind, NestJS, PostgreSQL, Prisma, Redis, and Socket.io",
+    "Full-Stack Engineer and AI Automation Specialist building web applications, AI agents and automated workflows with NestJS, Next.js, TypeScript, PostgreSQL, Redis, n8n and LLM integrations",
 }
 
 export default function RootLayout({
