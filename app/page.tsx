@@ -125,7 +125,7 @@ export default function Portfolio() {
               <span className="sm:whitespace-nowrap">AI Model Evaluation Specialist</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-3xl mx-auto">
-              Full-Stack Engineer and AI Automation Specialist building scalable web applications, intelligent automation systems and AI-powered business solutions. Skilled in NestJS, Next.js, TypeScript, PostgreSQL, Prisma, Redis, Socket.io, React, Vue.js and Nuxt.js. Experienced in designing AI agents and chatbots with n8n, LLM integrations, APIs and webhooks, using structured outputs, human-in-the-loop escalation and privacy-by-design to automate customer support, payments, order management and service delivery. Also experienced in data annotation, dataset validation and AI quality assurance, with a focus on reliable, well-tested, production-ready systems.
+              Full-Stack Engineer specializing in scalable web applications, AI automation, and intelligent business systems. Experienced with NestJS, Next.js, TypeScript, PostgreSQL, n8n, and LLM agents, with expertise in chatbot development, workflow automation, API integrations, and human-in-the-loop systems. Also skilled in AI model evaluation, data annotation, and quality assurance, with a focus on building reliable, production-ready solutions.
             </p>
           </div>
 
