@@ -1,19 +1,30 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, ExternalLink, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Portfolio() {
   const projects = [
     {
       title: "Lumen-Market",
-      role: "Full-Stack Developer",
-      description: "Lumen Market is a modern e-commerce marketplace (Nigeria-first, currency ₦). Temu-style breadth of catalog but a calmer, more trustworthy visual tone.",
-      technologies: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Socket.io", "Tailwind CSS", "Paystack"],
+      role: "Founder & Solo Builder",
+      description: "AI-native e-commerce platform for Nigeria. An AI agent (n8n + LLM) answers customers first from the live catalogue and hands order, payment and complaint questions to staff, with personal data masked before it reaches the AI. Paystack payments, refunds and delivery dates are fully automated, backed by 600+ automated tests.",
+      technologies: ["NestJS", "Next.js", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Socket.io", "n8n", "LLM Agents", "Paystack"],
       url: "https://lumen-market.vercel.app/",
+      caseStudy: "/projects/lumen-market",
       image: "/final-dark-1440-top.png",
       sector: "E-commerce",
+    },
+    {
+      title: "Ariesphere",
+      role: "Full-Stack Developer",
+      description: "Added end-to-end Flutterwave payments to an existing business website, with server-side payment verification, webhook transaction updates and reliable order management. Completed research inquiries with secure document uploads, admin retrieval and email notifications, without disrupting existing customer data or storage.",
+      technologies: ["Flutterwave API", "Webhooks", "Payment Integration", "Secure File Uploads", "Email Integration", "End-to-End Testing"],
+      url: "https://ariesphereinc.com/",
+      image: "/ariesphereinc.png",
+      sector: "Professional Services",
     },
     {
       title: "Sarva-Logistics",
@@ -193,7 +204,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 px-4">
+      <section id="projects" className="py-16 px-4 scroll-mt-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">Featured Projects</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
@@ -249,6 +260,15 @@ export default function Portfolio() {
                       </Badge>
                     ))}
                   </div>
+                  {project.caseStudy && (
+                    <Link
+                      href={project.caseStudy}
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
+                    >
+                      Read case study
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             ))}
