@@ -21,7 +21,7 @@ export default function Portfolio() {
       title: "Ariesphere",
       role: "Full-Stack Developer",
       description: "Added end-to-end Flutterwave payments to an existing business website, with server-side payment verification, webhook transaction updates and reliable order management. Completed research inquiries with secure document uploads, admin retrieval and email notifications, without disrupting existing customer data or storage.",
-      technologies: ["Flutterwave API", "Webhooks", "Payment Integration", "Secure File Uploads", "Email Integration", "End-to-End Testing"],
+      technologies: ["TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Flutterwave API", "Webhooks", "Secure File Uploads", "Email Integration", "End-to-End Testing"],
       url: "https://ariesphereinc.com/",
       image: "/ariesphereinc.png",
       sector: "Professional Services",
@@ -282,7 +282,7 @@ export default function Portfolio() {
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Professional Summary</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">7+</div>
+              <div className="text-4xl font-bold text-accent mb-2">20+</div>
               <div className="text-muted-foreground">Projects Delivered</div>
             </div>
             <div className="text-center">
@@ -298,7 +298,7 @@ export default function Portfolio() {
           <Card className="border-border/50">
             <CardContent className="p-8">
               <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-                Full-Stack Developer experienced in building scalable, responsive web applications and business solutions. Skilled in JavaScript/TypeScript, React, Next.js, Vue.js, NestJS, PostgreSQL and Redis. Experienced in API development, database architecture, real-time systems, payment integrations, application security and performance optimization. Focused on transforming business challenges into practical, reliable software solutions.
+                Full-Stack Engineer specializing in scalable web applications, AI automation, and intelligent business systems. Experienced with NestJS, Next.js, TypeScript, PostgreSQL, n8n, and LLM agents, with expertise in chatbot development, workflow automation, API integrations, and human-in-the-loop systems. Also skilled in AI model evaluation, data annotation, and quality assurance, with a focus on building reliable, production-ready solutions.
               </p>
             </CardContent>
           </Card>
